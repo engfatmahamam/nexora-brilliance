@@ -196,17 +196,18 @@ export const projects: Project[] = [
     title: "Building Brands People Remember",
     client: "PMSKILLS · Ritaj Mall · GOUD CAR",
     category: "Branding",
-    meta: "Education · Brand identity system",
+    meta: "Education · Retail · Automotive — full identity systems",
     image: work17.url,
     challenge:
-      "An education brand entering a competitive market needed a clean, credible and modern identity.",
+      "Three very different brands — UK education, retail and Arabic automotive — each needed an identity that is credible in its own market and consistent across every touchpoint.",
     approach: [
-      "Logo and full visual identity",
-      "Colour palette built on #1E5AA8 and white",
-      "Clean sans typography — modern, readable, professional",
-      "Applications and brand asset kit",
+      "PMSKILLS — clean sans typography on #1E5AA8 and white, modern and professional",
+      "Ritaj Mall — elegant serif with a gold gradient and #C96A3A palette",
+      "GOUD CAR — Arabic elegant typography in black and #C9A86A, traditional and refined",
+      "Logo, identity, typography, colours, applications and brand assets for each",
     ],
-    results: [{ value: "Full", label: "Brand guidelines delivered" }],
+    results: [{ value: "3", label: "Full brand guideline systems" }],
+
   },
   {
     id: "kazoza",
