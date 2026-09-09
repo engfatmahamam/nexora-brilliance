@@ -194,7 +194,7 @@ export const projects: Project[] = [
   {
     id: "pmskills",
     title: "Building Brands People Remember",
-    client: "PMSKILLS — UK Education",
+    client: "PMSKILLS · Ritaj Mall · GOUD CAR",
     category: "Branding",
     meta: "Education · Brand identity system",
     image: work17.url,
