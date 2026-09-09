@@ -63,12 +63,12 @@ export function ContactForm() {
           maxLength={100}
           className={field}
           placeholder="Your full name"
-          aria-invalid={!!errors.name}
-          aria-describedby={errors.name ? "name-error" : undefined}
+          aria-invalid={!!errors['name']}
+          aria-describedby={errors['name'] ? "name-error" : undefined}
         />
-        {errors.name && (
+        {errors['name'] && (
           <p id="name-error" className="mt-2 text-xs text-destructive">
-            {errors.name}
+            {errors['name']}
           </p>
         )}
       </div>
@@ -84,12 +84,12 @@ export function ContactForm() {
           maxLength={255}
           className={field}
           placeholder="you@company.com"
-          aria-invalid={!!errors.email}
-          aria-describedby={errors.email ? "email-error" : undefined}
+          aria-invalid={!!errors['email']}
+          aria-describedby={errors['email'] ? "email-error" : undefined}
         />
-        {errors.email && (
+        {errors['email'] && (
           <p id="email-error" className="mt-2 text-xs text-destructive">
-            {errors.email}
+            {errors['email']}
           </p>
         )}
       </div>
@@ -131,12 +131,12 @@ export function ContactForm() {
           maxLength={1500}
           className={field}
           placeholder="Tell us about the business, the market and the goal."
-          aria-invalid={!!errors.message}
-          aria-describedby={errors.message ? "message-error" : undefined}
+          aria-invalid={!!errors['message']}
+          aria-describedby={errors['message'] ? "message-error" : undefined}
         />
-        {errors.message && (
+        {errors['message'] && (
           <p id="message-error" className="mt-2 text-xs text-destructive">
-            {errors.message}
+            {errors['message']}
           </p>
         )}
       </div>
