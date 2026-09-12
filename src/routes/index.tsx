@@ -62,7 +62,8 @@ function Index() {
             </Reveal>
             <Reveal delay={90}>
               <h1 className="mt-8 max-w-4xl font-display text-5xl leading-[1.03] font-semibold tracking-tight sm:text-7xl lg:text-8xl">
-                Bold strategy. <span className="gold-text">Real growth.</span>
+                NeXora Marketing Agency — a growth systems &amp; revenue design studio.{" "}
+                <span className="gold-text">Bold strategy. Real growth.</span>
               </h1>
             </Reveal>
             <Reveal delay={160}>
