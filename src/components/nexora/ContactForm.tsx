@@ -47,8 +47,9 @@ export function ContactForm() {
     window.location.href = `mailto:${contact.email}?subject=${encodeURIComponent(
       `New project enquiry — ${parsed.data.name}`,
     )}&body=${encodeURIComponent(body)}`;
-    toast.success("Opening your email app with the enquiry ready to send.");
-    form.reset();
+    toast.info(
+      `Your email app should open with the enquiry ready — press send to reach ${contact.email}.`,
+    );
   }
 
   return (
