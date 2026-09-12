@@ -147,8 +147,12 @@ export function ContactForm() {
           type="submit"
           className="w-full rounded-full bg-gold px-8 py-4 text-sm font-medium tracking-wide text-primary-foreground transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none sm:w-auto"
         >
-          Send enquiry
+          Prepare enquiry email
         </button>
+        <p className="mt-3 text-xs text-muted-foreground">
+          This opens your email app with the enquiry filled in. Your message is only sent once you
+          press send there — or write to us directly at {contact.email}.
+        </p>
       </div>
     </form>
   );
