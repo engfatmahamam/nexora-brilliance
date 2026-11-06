@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Site shell (header, footer, toaster, page-enter transition) lives in `src/routes/__root.tsx`; pages render only their content. Why: one consistent nav across all routes.
+- Shared page building blocks live in `src/components/nexora/sections.tsx`, and per-route head tags use `pageHead()` from `src/lib/seo.ts`. Why: consistent layout and SEO.

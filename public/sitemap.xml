@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://neoxora-stellar-folio.lovable.app/</loc>
-  </url>
+  <url><loc>https://neoxora-stellar-folio.lovable.app/</loc></url>
+  <url><loc>https://neoxora-stellar-folio.lovable.app/about</loc></url>
+  <url><loc>https://neoxora-stellar-folio.lovable.app/services</loc></url>
+  <url><loc>https://neoxora-stellar-folio.lovable.app/portfolio</loc></url>
+  <url><loc>https://neoxora-stellar-folio.lovable.app/process</loc></url>
+  <url><loc>https://neoxora-stellar-folio.lovable.app/clients</loc></url>
+  <url><loc>https://neoxora-stellar-folio.lovable.app/contact</loc></url>
+  <url><loc>https://neoxora-stellar-folio.lovable.app/portfolio/dr-joseph</loc></url>
+  <url><loc>https://neoxora-stellar-folio.lovable.app/portfolio/digital-impact</loc></url>
+  <url><loc>https://neoxora-stellar-folio.lovable.app/portfolio/content-with-a-job</loc></url>
+  <url><loc>https://neoxora-stellar-folio.lovable.app/portfolio/ai-creative</loc></url>
+  <url><loc>https://neoxora-stellar-folio.lovable.app/portfolio/ai-creative-2</loc></url>
+  <url><loc>https://neoxora-stellar-folio.lovable.app/portfolio/media-production</loc></url>
+  <url><loc>https://neoxora-stellar-folio.lovable.app/portfolio/pmskills</loc></url>
+  <url><loc>https://neoxora-stellar-folio.lovable.app/portfolio/kazoza</loc></url>
+  <url><loc>https://neoxora-stellar-folio.lovable.app/portfolio/sohag</loc></url>
+  <url><loc>https://neoxora-stellar-folio.lovable.app/portfolio/print</loc></url>
 </urlset>
