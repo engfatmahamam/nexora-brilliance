@@ -1,11 +1,13 @@
 import { Instagram, Mail } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { navLinks } from "./SiteHeader";
 import logo from "@/assets/nexora-logo.jpg.asset.json";
 import { contact, markets } from "@/lib/nexora-content";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-navy-deep">
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.4fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
             <img
@@ -27,6 +29,19 @@ export function SiteFooter() {
             smarter marketing systems and measurable growth.
           </p>
         </div>
+
+        <nav aria-label="Footer">
+          <h2 className="text-xs tracking-[0.24em] text-gold uppercase">Explore</h2>
+          <ul className="mt-5 space-y-2 text-sm">
+            {[{ to: "/", label: "Home" } as const, ...navLinks, { to: "/contact", label: "Contact us" } as const].map((l) => (
+              <li key={l.to}>
+                <Link to={l.to} className="text-muted-foreground transition-colors hover:text-gold">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
         <div>
           <h2 className="text-xs tracking-[0.24em] text-gold uppercase">Markets</h2>
