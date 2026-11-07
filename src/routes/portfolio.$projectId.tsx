@@ -1,5 +1,6 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, useRouter, type ErrorComponentProps } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/nexora/Reveal";
 import { ProjectList } from "@/components/nexora/PortfolioGrid";
 import { Container, CtaBand, Section, SectionLabel } from "@/components/nexora/sections";
@@ -8,14 +9,13 @@ import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/portfolio/$projectId")({
   loader: ({ params }) => {
-    const index = projects.findIndex((p) => p.id === params.projectId);
-    if (index === -1) throw notFound();
-    return { index };
+    const project = projects.find((p) => p.id === params.projectId);
+    if (!project) throw notFound();
+    return project;
   },
   head: ({ params, loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Project unavailable — NeXora" }, { name: "robots", content: "noindex" }] };
-    const p = projects[loaderData.index];
-    return pageHead(`/portfolio/${params.projectId}`, `${p.title} — ${p.client} | NeXora`, p.challenge, "article");
+    return pageHead(`/portfolio/${params.projectId}`, `${loaderData.title} — ${loaderData.client} | NeXora`, loaderData.challenge, "article");
   },
   component: ProjectPage,
   notFoundComponent: () => (
@@ -26,20 +26,14 @@ export const Route = createFileRoute("/portfolio/$projectId")({
       </Link>
     </Container>
   ),
-  errorComponent: () => (
-    <Container className="pt-44 pb-32 text-center">
-      <h1 className="font-display text-4xl">This project didn&apos;t load</h1>
-      <Link to="/portfolio" className="mt-8 inline-block text-gold hover:underline">
-        Back to the portfolio
-      </Link>
-    </Container>
-  ),
+  errorComponent: ProjectError,
 });
 
 function ProjectPage() {
-  const { index } = Route.useLoaderData();
-  const p = projects[index];
-  const next = projects[(index + 1) % projects.length];
+  const p = Route.useLoaderData();
+  const currentIndex = projects.findIndex((project) => project.id === p.id);
+  const next = projects[(currentIndex + 1) % projects.length];
+  if (!next) return null;
   const related = projects.filter((x) => x.category === p.category && x.id !== p.id).slice(0, 3);
 
   return (
@@ -135,5 +129,29 @@ function ProjectPage() {
 
       <CtaBand title="Have a similar challenge?" />
     </>
+  );
+}
+
+function ProjectError({ error, reset }: ErrorComponentProps) {
+  const router = useRouter();
+  return (
+    <Container className="pt-44 pb-32 text-center">
+      <h1 className="font-display text-4xl">This project didn&apos;t load</h1>
+      {error instanceof Error && <p className="mt-3 text-sm text-muted-foreground">{error.message}</p>}
+      <div className="mt-8 flex flex-wrap justify-center gap-3">
+        <Button
+          onClick={() => {
+            router.invalidate();
+            reset();
+          }}
+          className="bg-gold text-primary-foreground hover:bg-gold/90"
+        >
+          Try again
+        </Button>
+        <Button asChild variant="outline">
+          <Link to="/portfolio">Back to the portfolio</Link>
+        </Button>
+      </div>
+    </Container>
   );
 }
