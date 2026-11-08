@@ -11,3 +11,4 @@
 
 - Site shell (header, footer, toaster, page-enter transition) lives in `src/routes/__root.tsx`; pages render only their content. Why: one consistent nav across all routes.
 - Shared page building blocks live in `src/components/nexora/sections.tsx`, and per-route head tags use `pageHead()` from `src/lib/seo.ts`. Why: consistent layout and SEO.
+- Keep the homepage campaign slider in its own component and confine homepage introduction changes to that section. Why: preserve the existing sections and keep slider behavior reusable and isolated.
