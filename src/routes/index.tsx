@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/nexora/Reveal";
+import { HomeHeroSlider } from "@/components/nexora/HomeHeroSlider";
 import { PortfolioGrid } from "@/components/nexora/PortfolioGrid";
 import {
   Container,
@@ -30,37 +31,41 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <>
-      <section className="relative overflow-hidden pt-36 pb-24 sm:pt-44 sm:pb-32">
+      <section className="relative overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-20">
         <div aria-hidden="true" className="absolute inset-0 hairline-grid opacity-60" />
-        <div
-          aria-hidden="true"
-          className="absolute -top-40 left-1/2 h-[38rem] w-[38rem] -translate-x-1/2 rounded-full bg-gold/10 blur-[140px]"
-        />
+        <div className="absolute inset-0 bg-linear-to-r from-background via-background/95 to-transparent" />
         <Container className="relative">
-          <Reveal>
-            <SectionLabel>Growth Systems &amp; Revenue Design Studio</SectionLabel>
-          </Reveal>
-          <Reveal delay={90}>
-            <h1 className="mt-8 max-w-4xl font-display text-5xl leading-[1.03] font-semibold tracking-tight sm:text-7xl lg:text-8xl">
-              NeXora Marketing Agency — a growth systems &amp; revenue design studio.{" "}
-              <span className="gold-text">Bold strategy. Real growth.</span>
-            </h1>
-          </Reveal>
-          <Reveal delay={160}>
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              We build bold brands, powerful strategies and real market growth — turning execution into
-              measurable business results.
-            </p>
-          </Reveal>
-          <Reveal delay={230}>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <PrimaryCta to="/contact">Build your growth system</PrimaryCta>
-              <SecondaryCta to="/portfolio">See our work</SecondaryCta>
+          <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16">
+            <div>
+              <Reveal>
+                <SectionLabel>Growth Systems &amp; Revenue Design Studio</SectionLabel>
+              </Reveal>
+              <Reveal delay={90}>
+                <h1 className="mt-8 max-w-4xl font-display text-5xl leading-[1.03] font-semibold tracking-tight sm:text-7xl">
+                  NeXora Marketing Agency — a growth systems &amp; revenue design studio.{" "}
+                  <span className="gold-text">Bold strategy. Real growth.</span>
+                </h1>
+              </Reveal>
+              <Reveal delay={160}>
+                <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
+                  We build bold brands, powerful strategies and real market growth — turning execution into
+                  measurable business results.
+                </p>
+              </Reveal>
+              <Reveal delay={230}>
+                <div className="mt-10 flex flex-wrap gap-3">
+                  <PrimaryCta to="/contact">Build your growth system</PrimaryCta>
+                  <SecondaryCta to="/portfolio">See our work</SecondaryCta>
+                </div>
+              </Reveal>
+              <Reveal delay={300} className="mt-14">
+                <StatsBar />
+              </Reveal>
             </div>
-          </Reveal>
-          <Reveal delay={300} className="mt-20">
-            <StatsBar />
-          </Reveal>
+            <Reveal delay={140} className="mx-auto w-full max-w-xl lg:max-w-none">
+              <HomeHeroSlider />
+            </Reveal>
+          </div>
         </Container>
       </section>
 
