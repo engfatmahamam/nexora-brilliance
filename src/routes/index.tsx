@@ -31,12 +31,15 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <>
-      <section className="relative overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-20">
+      <section className="relative overflow-hidden pt-24 pb-16 sm:pt-40 sm:pb-20">
         <div aria-hidden="true" className="absolute inset-0 hairline-grid opacity-60" />
         <div className="absolute inset-0 bg-linear-to-r from-background via-background/95 to-transparent" />
         <Container className="relative">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16">
-            <div>
+          <div className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16">
+            <Reveal delay={140} className="order-1 mx-auto w-full max-w-xl lg:order-2 lg:max-w-none">
+              <HomeHeroSlider />
+            </Reveal>
+            <div className="order-2 lg:order-1">
               <Reveal>
                 <SectionLabel>Growth Systems &amp; Revenue Design Studio</SectionLabel>
               </Reveal>
@@ -62,9 +65,6 @@ function Index() {
                 <StatsBar />
               </Reveal>
             </div>
-            <Reveal delay={140} className="mx-auto w-full max-w-xl lg:max-w-none">
-              <HomeHeroSlider />
-            </Reveal>
           </div>
         </Container>
       </section>
